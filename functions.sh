@@ -4,7 +4,7 @@ usage() {
     echo ""
     echo "Options:"
     echo "  -c: Configuration: simplex, duplex, controllerstorage, dedicatedstorage"
-    echo "  -i: Harvester HCI ISO image"
+    echo "  -i: HCI ISO image"
     echo ""
 }
 
@@ -28,7 +28,7 @@ configuration_check() {
     local CONFIGURATION=$1
     if [ $CONFIGURATION != "simplex" ] && [ $CONFIGURATION != "duplex" ] && [ $CONFIGURATION != "controllerstorage" ] && [ $CONFIGURATION != "dedicatedstorage" ]; then
         echo "Please check your configuration name, available configurations:"
-        echo "simplex, ha, controllerstorage, dedicatedstorage"
+        echo "simplex, duplex, controllerstorage, dedicatedstorage"
         exit 1
     fi
 }
