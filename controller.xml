@@ -1,7 +1,7 @@
 <domain type='kvm' id='164'>
   <name>NAME</name>
-  <memory unit='KiB'>33554432</memory>
-  <currentMemory unit='KiB'>33554432</currentMemory>
+  <memory unit='KiB'>67108864</memory>
+  <currentMemory unit='KiB'>67108864</currentMemory>
   <vcpu placement='static'>16</vcpu>
   <resource>
     <partition>/machine</partition>
@@ -14,8 +14,7 @@
     <apic/>
     <pae/>
   </features>
-  <cpu match='host-passthrough'>
-  </cpu>
+  <cpu match='host-passthrough'/>
   <clock offset='utc'/>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
