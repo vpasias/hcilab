@@ -2,7 +2,7 @@
   <name>NAME</name>
   <memory unit='KiB'>67108864</memory>
   <currentMemory unit='KiB'>67108864</currentMemory>
-  <vcpu placement='static'>32</vcpu>
+  <vcpu placement='static'>16</vcpu>
   <resource>
     <partition>/machine</partition>
   </resource>
