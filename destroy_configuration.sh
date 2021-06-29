@@ -28,7 +28,7 @@ fi
 
 configuration_check ${CONFIGURATION}
 
-CONFIGURATION=${CONFIGURATION:-simplex}
+CONFIGURATION=${CONFIGURATION:-controllerstorage}
 CONTROLLER=${CONTROLLER:-controller}
 DOMAIN_DIRECTORY=vms
 
