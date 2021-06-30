@@ -3,7 +3,7 @@ usage() {
     echo "$0 [-h]"
     echo ""
     echo "Options:"
-#    echo "  -i: Harvester HCI ISO image"
+#    echo "  -i: HCI ISO image"
     echo ""
 }
 
