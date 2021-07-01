@@ -36,7 +36,7 @@ destroy_controller ${CONFIGURATION} ${CONTROLLER}
 
 if ([ "$CONFIGURATION" == "controllerstorage" ] || [ "$CONFIGURATION" == "dedicatedstorage" ]); then
     WORKER=${WORKER:-worker}
-    WORKER_NODES_NUMBER=${WORKER_NODES_NUMBER:-1}
+    WORKER_NODES_NUMBER=${WORKER_NODES_NUMBER:-2}
     for ((i=0; i<=$WORKER_NODES_NUMBER; i++)); do
         WORKER_NODE=${CONFIGURATION}-${WORKER}-${i}
         destroy_node "worker" $WORKER_NODE
@@ -45,7 +45,7 @@ fi
 
 if ([ "$CONFIGURATION" == "dedicatedstorage" ]); then
     STORAGE=${STORAGE:-storage}
-    STORAGE_NODES_NUMBER=${STORAGE_NODES_NUMBER:-1}
+    STORAGE_NODES_NUMBER=${STORAGE_NODES_NUMBER:-2}
     for ((i=0; i<=$STORAGE_NODES_NUMBER; i++)); do
         STORAGE_NODE=${CONFIGURATION}-${STORAGE}-${i}
         destroy_node "storage" ${STORAGE_NODE}
