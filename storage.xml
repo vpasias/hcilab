@@ -14,7 +14,12 @@
     <apic/>
     <pae/>
   </features>
-  <cpu match='host-passthrough'/>
+  <cpu match='exact'>
+    <model fallback='forbid'>Skylake-Server</model>
+    <topology sockets='1' cores='16' threads='32'/>
+    <feature policy='optional' name='vmx'/>
+    <feature policy='optional' name='svm'/>
+  </cpu>
   <clock offset='utc'/>
   <on_poweroff>destroy</on_poweroff>
   <on_reboot>restart</on_reboot>
