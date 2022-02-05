@@ -84,5 +84,6 @@ ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo DEBIAN_FRONTEND=noninterac
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo DEBIAN_FRONTEND=noninteractive apt install xrdp --install-recommends -y"
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo ufw allow from any to any port 3389 proto tcp"
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo systemctl enable --now xrdp"
+ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo systemctl set-default graphical.target"
 
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo reboot"
