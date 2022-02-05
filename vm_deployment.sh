@@ -80,7 +80,7 @@ ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo sed -i 's/hosts:          
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo usermod -aG libvirt ubuntu && sudo adduser ubuntu libvirt-qemu && sudo adduser ubuntu kvm && sudo adduser ubuntu libvirt-dnsmasq && echo 0 | sudo tee /sys/module/kvm/parameters/halt_poll_ns"
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo sed -i 's/0770/0777/' /etc/libvirt/libvirtd.conf"
 
-ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo DEBIAN_FRONTEND=noninteractive apt install task-xfce-desktop xrdp --install-recommends -y"
-ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo systemctl start xrdp && sudo systemctl enable xrdp && sleep 10"
+ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo DEBIAN_FRONTEND=noninteractive apt install xrdp tigervnc-standalone-server --install-recommends -y"
+ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo systemctl enable xrdp"
 
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo reboot"
