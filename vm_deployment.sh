@@ -74,7 +74,7 @@ ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo apt update && sudo apt upg
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo DEBIAN_FRONTEND=noninteractive apt-get install linux-generic-hwe-20.04 --install-recommends -y"
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo apt autoremove -y && sudo apt --fix-broken install -y"
 
-ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo apt-get install genisoimage libguestfs-tools libosinfo-bin virtinst qemu-kvm qemu-system git vim net-tools wget curl bash-completion python3-pip libvirt-daemon-system virt-manager bridge-utils libnss-libvirt libvirt-clients osinfo-db-tools intltool sshpass ovmf genometools virt-top -y"
+ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo apt-get install genisoimage libguestfs-tools libosinfo-bin virtinst qemu qemu-kvm qemu-system git vim net-tools wget curl bash-completion python3-pip libvirt-daemon-system virt-manager bridge-utils libnss-libvirt libvirt-clients osinfo-db-tools intltool sshpass ovmf genometools virt-top haveged -y"
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo sed -i 's/hosts:          files dns/hosts:          files libvirt libvirt_guest dns/' /etc/nsswitch.conf && sudo lsmod | grep kvm"
 
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo usermod -aG libvirt ubuntu && sudo adduser ubuntu libvirt-qemu && sudo adduser ubuntu kvm && sudo adduser ubuntu libvirt-dnsmasq && echo 0 | sudo tee /sys/module/kvm/parameters/halt_poll_ns"
