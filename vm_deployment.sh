@@ -34,7 +34,8 @@ ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo systemctl restart sshd"
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "sudo rm -rf /root/.ssh/authorized_keys"
 
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "cat << EOF | sudo tee /etc/modprobe.d/qemu-system-x86.conf
-options kvm_intel nested=1
+options kvm ignore_msrs=1 report_ignored_msrs=0
+options kvm_intel nested=1 enable_apicv=0 ept=1
 EOF"
 
 ssh -o "StrictHostKeyChecking=no" ubuntu@netsim "cat << EOF | sudo tee /etc/sysctl.conf
